@@ -57,6 +57,25 @@ const marcosScript = (scenery, myMove) => {
         return move
       }
     }
+
+    //Check diagonal one
+    if ((scenery[0] == myMove) && (scenery[4] == myMove) && (scenery[8] == "")) {
+      return 8
+    } else if ((scenery[0] == myMove) && (scenery[4] == "") && (scenery[8] == myMove)) {
+      return 4
+    } else if ((scenery[0] == "") && (scenery[4] == myMove) && (scenery[8] == myMove)) {
+      return 0
+    }
+
+    //Check diagonal two
+    if ((scenery[2] == myMove) && (scenery[4] == myMove) && (scenery[6] == "")) {
+      return 6
+    } else if ((scenery[2] == myMove) && (scenery[4] == "") && (scenery[6] == myMove)) {
+      return 4
+    } else if ((scenery[2] == "") && (scenery[4] == myMove) && (scenery[6] == myMove)) {
+      return 2
+    }
+
   }
 
 
