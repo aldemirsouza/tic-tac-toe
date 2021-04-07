@@ -76,6 +76,19 @@ const marcosScript = (scenery, myMove) => {
       return 2
     }
 
+    return -1
+  }
+
+  //Move Attack
+  let moveAttack = nextMove(scenery, myMove, true)
+  if (moveAttack != -1) {
+    return moveAttack
+  }
+
+  //Move Defense
+  let moveDefense = nextMove(scenery, myMove, false)
+  if (moveDefense != -1) {
+    return moveDefense
   }
 
 
@@ -94,6 +107,5 @@ const marcosScript = (scenery, myMove) => {
 
   return index
 }
-
 
 export default marcosScript
