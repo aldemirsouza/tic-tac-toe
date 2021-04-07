@@ -2,10 +2,10 @@
 
 const marcosScript = (scenery, myMove) => {
   /*
-    0   1   2 linhas
-  0  0 - 1 - 2 
-  1  3 - 4 - 5
-  2  6 - 7 - 8
+  RL- 0   1   2 
+  0   0 - 1 - 2 
+  1   3 - 4 - 5
+  2   6 - 7 - 8
   */
   // your script here
   const nextTurn = {
