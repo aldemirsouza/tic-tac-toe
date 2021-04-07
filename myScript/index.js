@@ -13,6 +13,22 @@ const marcosScript = (scenery, myMove) => {
     O: "X"
   }
 
+  function nextMove(scenery, myMove, attack){
+    myMove = attack ? myMove : nextTurn[myMove]
+
+    function checkRow(scenery, row) {
+      if ((scenery[row * 3 + 0] == myMove) && (scenery[row * 3 + 1] == myMove) && (scenery[row * 3 + 2] == "")) {
+        return row * 3 + 2
+      } else if ((scenery[row * 3 + 0] == myMove) && (scenery[row * 3 + 1] == "") && (scenery[row * 3 + 2] == myMove)) {
+        return row * 3 + 1
+      } else if ((scenery[row * 3 + 0] == "") && (scenery[row * 3 + 1] == myMove) && (scenery[row * 3 + 2] == myMove)) {
+        return row * 3 + 0
+      } else {
+        return -1
+      }
+    }
+  }
+
 
   //Random play
   const freeCells = scenery.map((cell, index) => {
