@@ -27,6 +27,36 @@ const marcosScript = (scenery, myMove) => {
         return -1
       }
     }
+
+    //Checks lines
+    for (var i = 0; i < 3; i++) {
+      const move = checkRow(scenery, i)
+
+      if (move != -1) {
+        return move
+      }
+    }
+
+    function checkColumn(scenery, column) {
+      if ((scenery[column + 0] == myMove) && (scenery[column + 3] == myMove) && (scenery[column + 6] == "")) {
+        return column + 6
+      } else if ((scenery[column + 0] == myMove) && (scenery[column + 3] == "") && (scenery[column + 6] == myMove)) {
+        return column + 3
+      } else if ((scenery[column + 0] == "") && (scenery[column + 3] == myMove) && (scenery[column + 6] == myMove)) {
+        return column + 0
+      } else {
+        return -1
+      }
+    }
+
+    //Check columns 
+    for (var j = 0; j < 3; j++) {
+      const move = checkColumn(scenery, j)
+
+      if (move != -1) {
+        return move
+      }
+    }
   }
 
 
